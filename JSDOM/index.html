@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "hi"> Hi <span style="display: none;">A</span></div>
+
+    <h2>แบบฟอร์ม</h2> 
+
+        <div id="content"></div>
+        <input type="checkbox" name="interest" value="กีฬา">กีฬา
+        <input type="checkbox" name="interest" value="ดนตรี">ดนตรี
+        <input type="checkbox" name="interest" value="หนังสือ">หนังสือ
+        <br><br>
+        <button onclick="submitInterest()">ส่งข้อมูล</button>
+    <script>
+       function SubmitInterest(){
+        //ดึงข้อมูลจาก checkbox
+        let checkboxes = document.querySelectorAll('input[name="interest"]');
+        let contentHTML = '<ul>';
+        //เอา value ออกมา
+        for (let i = 0; i < checkboxes.length; i++){
+            if (checkboxes[i].checked){
+                //console.log(checkboxes[i].value);
+                contentHTML += '<li>' + checkboxes[i].value + '</li>';
+            }
+        }
+        //วนค่าที่เลือกใช้กลับไปที่ HTML
+        contentHTML += '</ul>';
+        
+
+        //ใส่html ที่สรา้งขึ้นมาใหม่ลงใน div id="content"
+        let contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = contentHTML;
+       }
+        
+        
+        
+        //Select DOM
+        //const fnameInput = document.getElementsByClassName("input");
+        //console.log(fnameInput);
+        //for(let i = 0; i < fnameInput.length; i++){
+            //console.log(fnameInput[i].value);
+        //}
+
+
+        //const fnameInput = document.querySelector('inputname[name="fname"]');
+        //console.log(fnameInput.value);
+        
+        //งานอดิเรก:
+    //<input type="checkbox" name="hobby" value="football">football
+    //<input type="checkbox" name="hobby" value="basketball">basketball 
+    //<input type="checkbox" name="hobby" value="tennis">tennis
+    //<script>
+        //let checkbox = document.querySelectorAll('input[name="hobby"]');
+        //for(let i = 0; i< checkboxes.length; i++){
+        //console.log(checkboxes[i].value);
+        //}
+
+        //onkeydown = กดปุ่มลงไป
+        //onkeyup = ปล่อยปุ่ม
+ 
+        /*
+        mousedown ช เมื่อกด mouse
+        mouseup = เมื่อกดแล้วปล่อย mouse
+        mouseover = เมื่อเอา mouse ไปชี้
+        
+        <button 
+        onmouseover="onmouseoverFname()"
+        onmouseup="onmouseupFname()"
+        onmousedown="onmousedownFname()"
+         >click me</button>
+        <script>
+             function onmouseoverFname(){
+                console.log("Mouse is over the button")
+                }
+            function onmouseupFname(){
+                 console.log("Mouse is up the button")
+                }
+
+            function onmousedownFname(){
+                console.log("Mouse down")
+                }*/
+
+
+            /*
+                <button 
+                <div id = "hi"> Hi <span style="display: none;">A</span></div>
+                <script>
+                    let hiDOM = document.getElementById("hi");
+                    hiDOM.innerHTML='hello <b>A</b>'
+                        console.log(hiDOM.textContent);
+                        console.log(hiDOM.innerText);
+                        console.log(hiDOM.innerHTML);
+        */ 
+    </script>
+       
+</body>
+</html>
+
