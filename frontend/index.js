@@ -1,3 +1,4 @@
+
 const validateData = (userData) => {
     let errors = [];
     if (!userData.firstName) {
